@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Zensical
+site/
+.cache/
+
+# Backups
+backup.zip
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Files too large for GitHub
+docs/samples/TM-9-2320-366-20-1.pdf
+docs/samples/TM-9-2320-365-20-1.pdf
+docs/samples/TM-9-2320-366-10-1.pdf

@@ -1,0 +1,89 @@
+/* ============================================================
+   Homepage hero banner — earth-boy-on-moon logo + site title
+   ============================================================ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.hero-text h1 {
+  margin-bottom: 0.25rem;
+}
+
+.hero-text h2 {
+  margin-top: 0;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   Sepia background — light mode only
+   ============================================================ */
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #ececec;
+}
+
+/* Headings and site name use Montserrat SemiBold; body stays Regular */
+.hero-text h1,
+.md-typeset h1 {
+  font-weight: 450;
+}
+
+.hero-text h2,
+.md-typeset h2,
+.md-typeset h3 {
+  font-weight: 350;
+}
+
+/* Top header site name also uses SemiBold */
+.md-ellipsis {
+  font-weight: 350;
+}
+
+/* Certificate badges in footer */
+.md-badge {
+  max-height: 75px;
+}
+
+.md-social {
+  align-items: center;
+}
+
+/* Match GLightbox caption links to site link color */
+.gslide-description a {
+  color: var(--md-typeset-a-color, var(--md-primary-fg-color));
+}
+
+.gslide-description a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* Stack vertically and center on narrow / mobile screens */
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .glightbox-mobile .glightbox-container .gslide-title {
+    font-size: 1rem;
+  }
+
+  .glightbox-mobile .glightbox-container .gslide-desc a {
+    color: var(--md-typeset-a-color, var(--md-primary-fg-color));
+  }
+
+  .glightbox-mobile .glightbox-container .gslide-desc a:hover {
+    color: var(--md-accent-fg-color);
+  }
+}
