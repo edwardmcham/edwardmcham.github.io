@@ -60,7 +60,7 @@ name = "LinkedIn »"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/emcham-io"
+link = "https://github.com/edwardmcham"
 name = "GitHub »"
 
 [[project.extra.social]]
