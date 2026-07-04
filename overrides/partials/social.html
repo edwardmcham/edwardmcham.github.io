@@ -15,7 +15,7 @@
     {% if "mastodon" in social.icon %}
       {% set rel = rel ~ " me" %}
     {% endif %}
-{% set title = social.name %}
+    {% set title = social.name %}
     {% if not title and "//" in social.link %}
       {% set url = split_and_get(social.link, "//", 1) %}
       {% set title = split_and_get(url, "/", 0) %}
@@ -23,6 +23,8 @@
     {% set href = social.link %}
     {% if "envelope" in social.icon %}
       {% set href = "mailto:" ~ config.extra.site_author_email %}
+    {% elif "file-pdf" in social.icon %}
+      {% set href = social.link | url %}
     {% endif %}
     <a href="{{ href }}" target="_blank" rel="{{ rel }}" title="{{ title | e }}" class="md-social__link">
       {% include ".icons/" ~ social.icon ~ ".svg" %}
