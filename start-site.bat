@@ -13,5 +13,8 @@ if defined VIRTUAL_ENV (
     )
 )
 
+echo Doing clean build...
+py -m zensical build --clean
+
 echo Starting Zensical dev server...
 py -m zensical serve --open

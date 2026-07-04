@@ -9,6 +9,12 @@
   margin-bottom: 2rem;
 }
 
+/* Pull the social/PDF icon row up under the hero subtitle */
+.hero + p {
+  margin: -4.5em 0 4em 0;
+  margin-left: 10.25rem;
+}
+
 .hero-image {
   width: 180px;
   height: auto;
@@ -23,6 +29,14 @@
   margin-top: 0;
   font-weight: 400;
   opacity: 0.8;
+}
+
+/* ===============================================================
+   Add more right-side buffer to main content area (except mobile)
+   =============================================================== */
+
+.md-content {
+  padding-right: 4rem;
 }
 
 /* ============================================================
@@ -68,11 +82,51 @@
   color: var(--md-accent-fg-color);
 }
 
+/* Social icons row in hero and resume pages; float PDF icon to the right since it's always last */
+.social-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.social-icons a:last-child {
+  margin-left: auto;
+  color: darkred;
+}
+
+/* Enlarge inline icons and footer social icons for readability */
+.md-typeset .twemoji svg,
+.md-social__link svg {
+  width: 2em !important;
+  height: 2em !important;
+  max-height: 2em !important;
+}
+
+/* External link icon next to links that open in a new tab/window, kept at normal size */
+.external-link-icon svg {
+  width: 1em;
+  height: 1em;
+  margin-left: 0.3em;
+  vertical-align: -0.075em;
+  fill: currentColor;
+}
+
 /* Stack vertically and center on narrow / mobile screens */
 @media (max-width: 600px) {
   .hero {
     flex-direction: column;
     text-align: center;
+  }
+
+  .hero + p {
+    margin-top: -2.5em;
+    margin-left: 0;
+  }
+
+  .md-content {
+    padding-right: 0;
   }
 
   .glightbox-mobile .glightbox-container .gslide-title {
@@ -85,5 +139,13 @@
 
   .glightbox-mobile .glightbox-container .gslide-desc a:hover {
     color: var(--md-accent-fg-color);
+  }
+
+  .hero + p .social-icons {
+    justify-content: center;
+  }
+
+  .social-icons a:last-child {
+    margin-left: 0;
   }
 }

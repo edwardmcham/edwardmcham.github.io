@@ -3,6 +3,11 @@ site_name = "emcham.io"
 site_description = "EDWARD McHAM | Senior Technical Writer / Documentation Engineer"
 site_author = "Edward McHam"
 site_url = "https://edwardmcham.github.io/"
+nav = [
+    { "Blog" = "index.md" },
+    { "Resume" = "resume.md" },
+    { "Portfolio" = "portfolio.md" },
+]
 extra_css = [
     "stylesheets/glightbox.min.css",
     "stylesheets/extra.css",
@@ -50,28 +55,56 @@ toggle.name = "Switch to system preference"
 
 [[project.extra.social]]
 icon = "fontawesome/solid/envelope"
-link = "mailto:edward.mcham@gmail.com"
-name = "Email »"
+link = ""
+name = "Email Eddie »"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/phone"
+link = "tel:+19034311974"
+name = "Call Eddie »"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/linkedin"
 link = "https://www.linkedin.com/in/edwardmcham/"
-name = "LinkedIn »"
+name = "Eddie on LinkedIn »"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/globe"
+link = "https://emcham.io"
+name = "Website »"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://github.com/edwardmcham"
-name = "GitHub »"
+name = "Eddie on GitHub »"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/youtube"
 link = "https://www.youtube.com/@emcham-io"
-name = "YouTube »"
+name = "Eddie on YouTube »"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/file-pdf"
+link = "assets/RESUME_EDWARD_McHAM_Senior_Technical_Writer_Documentation_Engineer.pdf"
+name = "Download PDF resume »"
 
 [project.extra]
 site_author_email = "edward.mcham@gmail.com"
+
+[project.markdown_extensions.pymdownx.snippets]
+base_path = ["includes"]
+check_paths = true
+
+[project.markdown_extensions.md_in_html]
 
 [project.markdown_extensions.zensical.extensions.glightbox]
 auto = false
 width = "600px"
 height = "auto"
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.markdown_extensions.zensical.extensions.macros]
+render_by_default = true
