@@ -1,13 +1,24 @@
 /* =============================================================================
-   External link handling
-   - Adds target="_blank" + rel="noopener" to any link leaving the site
-     (different hostname), or any .pdf link — even a same-hostname
-     relative path, since a PDF is still effectively a download.
-   - Appends a small arrow icon to those links, except ones inside
-     .social-icons or carrying the footer's md-social__link class —
-     those stay intentionally icon-free.
+   extra.js — custom site behavior
+
+   All page-load logic is defined as named functions below, then run
+   from a single document$.subscribe() call at the bottom. This is a
+   readability/maintainability choice, not a performance one — each
+   function still runs exactly once per page view either way. Having
+   one call site makes the full list of "what happens on page load"
+   visible at a glance, in a clear, guaranteed order.
    ============================================================================= */
-document$.subscribe(function() {
+
+/**
+ * External link handling.
+ * Adds target="_blank" + rel="noopener" to any link leaving the site
+ * (different hostname), or any .pdf link — even a same-hostname
+ * relative path, since a PDF is still effectively a download.
+ * Appends a small arrow icon to those links, except ones inside
+ * .social-icons or carrying the footer's md-social__link class —
+ * those stay intentionally icon-free.
+ */
+function initExternalLinks() {
   document.querySelectorAll(".md-content a").forEach(function(link) {
     var isSocial = link.classList.contains("md-social__link") || link.closest(".social-icons");
     var isPdf = link.href.endsWith(".pdf");
@@ -24,32 +35,106 @@ document$.subscribe(function() {
       );
     }
   });
-});
+}
 
-/* =============================================================================
-   GLightbox init — enables the click-to-enlarge modal for any element
-   with class="glightbox" (the TWHQ certification badge in the footer).
-   ============================================================================= */
-document$.subscribe(function() {
-  const lightbox = GLightbox({
+/**
+ * GLightbox init — enables the click-to-enlarge modal for any element
+ * with class="glightbox" (the TWHQ certification badge in the footer).
+ */
+function initGLightbox() {
+  GLightbox({
     selector: '.glightbox',
     touchNavigation: true,
     loop: true,
     moreLength: 0,
   });
-});
+}
 
-/* =============================================================================
-   Footer copyright year — keeps "© <year>" current with no manual edit.
-   Wrapped in document$.subscribe (not run once at load) so it still
-   works correctly if navigation.instant is ever added to zensical.toml —
-   that feature swaps page content without a full reload, which would
-   otherwise skip this line on later page views. The null check avoids
-   a console error on any page where the element doesn't exist.
-   ============================================================================= */
-document$.subscribe(function() {
-  const yearEl = document.getElementById("copyright-year");
+/**
+ * Footer copyright year — keeps "© <year>" current with no manual edit.
+ * The null check avoids a console error on any page where the element
+ * doesn't exist.
+ */
+function updateCopyrightYear() {
+  var yearEl = document.getElementById("copyright-year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+}
+
+/**
+ * Job-meta separator spacing.
+ * Two different HTML shapes get the same treatment:
+ *   Case A — job entries: several <em> tags (company, location, dates)
+ *   with bare "|" text nodes between them as siblings inside one <p>.
+ *   Case B — header subtitle: one <strong> tag with "|" inside its
+ *   own continuous text run.
+ * Both get the "|" wrapped in <span class="job-meta-sep"> so extra.css
+ * can add spacing — plain text alone can't be targeted by CSS.
+ */
+function initJobMetaSeparators() {
+  var seen = new Set();
+
+  document.querySelectorAll(".md-typeset em").forEach(function(em) {
+    var p = em.parentElement;
+    if (p.tagName !== "P" || seen.has(p)) return;
+    seen.add(p);
+    if (!p.textContent.includes("|")) return;
+
+    Array.from(p.childNodes).forEach(function(node) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === "|") {
+        var span = document.createElement("span");
+        span.className = "job-meta-sep";
+        span.textContent = "|";
+        node.replaceWith(span);
+      }
+    });
+  });
+
+  document.querySelectorAll(".md-typeset strong").forEach(function(strong) {
+    if (strong.innerHTML.includes(" | ") && !strong.querySelector(".job-meta-sep")) {
+      strong.innerHTML = strong.innerHTML.replace(/\s\|\s/g, ' <span class="job-meta-sep">|</span> ');
+    }
+  });
+}
+
+/**
+ * Nav tab icons.
+ * Zensical's nav tab titles render as plain text — icon shortcodes
+ * placed directly in zensical.toml's nav config don't get processed
+ * the way they do in page content. This fetches each icon's real SVG
+ * file once and inserts it into the matching tab link by href, giving
+ * the same visual result without depending on that unsupported syntax.
+ */
+function initNavIcons() {
+  var iconMap = {
+    "": "newspaper",           // Blog / home tab
+    "resume/": "file-user",
+    "portfolio/": "layout-grid"
+  };
+
+  document.querySelectorAll(".md-tabs__link").forEach(function(link) {
+    var path = new URL(link.href).pathname.replace(/^\//, "");
+    var iconName = iconMap[path];
+    if (!iconName || link.querySelector(".nav-tab-icon")) return;
+
+    fetch("/assets/icons/" + iconName + ".svg")
+      .then(function(r) { return r.text(); })
+      .then(function(svg) {
+        link.insertAdjacentHTML("afterbegin",
+          '<span class="nav-tab-icon">' + svg + '</span>');
+      });
+  });
+}
+
+/* -----------------------------------------------------------------------
+   Single subscription — runs everything above, in order, on every
+   page view.
+   ----------------------------------------------------------------------- */
+document$.subscribe(function() {
+  initExternalLinks();
+  initGLightbox();
+  updateCopyrightYear();
+  initJobMetaSeparators();
+  initNavIcons();
 });

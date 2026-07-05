@@ -131,6 +131,22 @@
   fill: currentColor;
 }
 
+/* Nav tab icons, inserted by extra.js's initNavIcons() */
+.nav-tab-icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+  vertical-align: -0.15em;
+  fill: none;
+  stroke: currentColor;
+}
+
+/* Extra breathing room around the | separators in job-meta lines
+   (Company | City, State | Dates), added dynamically by extra.js */
+.job-meta-sep {
+  margin: 0 1em;
+  opacity: 0.6;
+}
 
 /* =============================================================================
    5. RESPONSIVE — mobile (≤600px)
