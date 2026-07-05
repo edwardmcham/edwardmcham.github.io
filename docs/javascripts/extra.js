@@ -4,15 +4,12 @@
    All page-load logic is defined as named functions below, then run
    from a single document$.subscribe() call at the bottom. This is a
    readability/maintainability choice, not a performance one — each
-   function still runs exactly once per page view either way. Having
-   one call site makes the full list of "what happens on page load"
-   visible at a glance, in a clear, guaranteed order.
+   function still runs exactly once per page view either way.
    ============================================================================= */
 
 /* Cached fetch of the external-link icon file — read from disk once,
-   reused for every matching link on the page. Same single-source
-   pattern as initNavIcons() below, so this SVG only needs editing in
-   one place: docs/assets/icons/external-link.svg */
+   reused for every matching link on the page. Edit the icon by
+   changing docs/assets/icons/external-link.svg only. */
 let _externalIconPromise = null;
 function getExternalIcon() {
   if (!_externalIconPromise) {
@@ -78,13 +75,11 @@ function updateCopyrightYear() {
 
 /**
  * Pipe separator spacing.
- * Wraps every "|" character found in the resume page's text — job
- * entries, the header subtitle, and Education/Certifications lines —
- * in a <span> so extra.css can add breathing room around it. Handles
- * any surrounding structure (link before, <em> after, plain text on
- * both sides, or nothing) rather than needing a separate case for
- * each pattern, since a plain "|" character can't be targeted by CSS
- * on its own.
+ * Wraps every "|" character found anywhere in the resume page's text
+ * — job entries, the header subtitle, Education/Certifications lines
+ * — in a <span> so extra.css can add spacing. Handles any surrounding
+ * structure automatically, rather than needing a separate case for
+ * each HTML shape.
  */
 function initPipeSeparators() {
   var root = document.querySelector(".md-content__inner.md-typeset");
@@ -94,8 +89,6 @@ function initPipeSeparators() {
   var nodes = [];
   while (walker.nextNode()) {
     var node = walker.currentNode;
-    // Skip anything already inside a previously-wrapped separator,
-    // so re-running this doesn't double-wrap.
     if (node.parentElement.closest(".job-meta-sep")) continue;
     if (node.nodeValue.indexOf("|") !== -1) nodes.push(node);
   }
@@ -123,8 +116,7 @@ function initPipeSeparators() {
  * Zensical's nav tab titles render as plain text — icon shortcodes
  * placed directly in zensical.toml's nav config don't get processed
  * the way they do in page content. This fetches each icon's real SVG
- * file once and inserts it into the matching tab link by href, giving
- * the same visual result without depending on that unsupported syntax.
+ * file once and inserts it into the matching tab link by href.
  */
 function initNavIcons() {
   var iconMap = {
