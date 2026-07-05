@@ -120,11 +120,11 @@ function initPipeSeparators() {
  */
 function initNavIcons() {
   var iconMap = {
-    "": "newspaper",           // Blog / home tab
+    "": "home",
+    "blog/": "newspaper",
     "resume/": "file-user",
     "portfolio/": "layout-grid"
   };
-
   document.querySelectorAll(".md-tabs__link").forEach(function(link) {
     var path = new URL(link.href).pathname.replace(/^\//, "");
     var iconName = iconMap[path];
@@ -139,6 +139,25 @@ function initNavIcons() {
   });
 }
 
+/**
+ * Blog page Expand All / Collapse All buttons.
+ * Toggles the open attribute on every .month-group <details> element.
+ * No-ops safely on any page without these buttons (e.g. every page
+ * except blog.md).
+ */
+function initBlogControls() {
+  var expandBtn = document.querySelector(".blog-expand-all");
+  var collapseBtn = document.querySelector(".blog-collapse-all");
+  if (!expandBtn || !collapseBtn) return;
+
+  expandBtn.addEventListener("click", function() {
+    document.querySelectorAll(".month-group").forEach(function(d) { d.open = true; });
+  });
+  collapseBtn.addEventListener("click", function() {
+    document.querySelectorAll(".month-group").forEach(function(d) { d.open = false; });
+  });
+}
+
 /* -----------------------------------------------------------------------
    Single subscription — runs everything above, in order, on every
    page view.
@@ -149,4 +168,5 @@ document$.subscribe(function() {
   updateCopyrightYear();
   initPipeSeparators();
   initNavIcons();
+  initBlogControls();
 });

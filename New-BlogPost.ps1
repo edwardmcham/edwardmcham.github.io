@@ -2,8 +2,8 @@
 .SYNOPSIS
     Scaffolds a new blog post: prompts for a title, creates the dated
     folder (docs/blog/YYYY/MM/DD/), and writes a Markdown file with
-    title + date front matter already filled in, then opens it in
-    VS Code.
+    title + date front matter and post_nav(page.url) calls already
+    placed at both the top and bottom, then opens it in VS Code.
 
 .NOTES
     Filenames use a time prefix (HH-mm-ss-slug.md) so more than one
@@ -13,6 +13,10 @@
     Re-prompts for a different title if a post with the same title
     already exists in that day's folder. The same title on a
     DIFFERENT date is untouched and allowed.
+
+    post_nav(page.url) needs no manual path typing -- page.url is a
+    built-in value Zensical provides automatically for every page, so
+    the same exact call works unchanged in every post.
 #>
 
 do {
@@ -43,6 +47,9 @@ do {
 # Front matter block every post needs: title and date drive
 # recent_posts() in main.py, which sorts and lists posts on the home
 # page using these fields (never the file's modified timestamp).
+# post_nav(page.url) appears both right after the front matter (so
+# readers can jump to another post without scrolling) and again at
+# the very bottom -- write the actual post content between the two.
 $frontMatter = @"
 ---
 title: $Title
@@ -51,6 +58,11 @@ tags:
   - Blog
 ---
 
+{{ post_nav(page.url) }}
+
+
+
+{{ post_nav(page.url) }}
 "@
 
 Set-Content -Path $filePath -Value $frontMatter -Encoding UTF8

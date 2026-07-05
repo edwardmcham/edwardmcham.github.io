@@ -19,8 +19,7 @@
 /* The social/PDF icon row is the paragraph immediately following the
    hero block in index.md — no class needed, targeted by position. */
 .hero + p {
-  margin: -4.5em 0 4em 0;
-  margin-left: 11rem;
+  margin: -4.5em 0 4em 10.25rem;
 }
 
 /* Extra right-side buffer on the main content area, desktop only
@@ -29,6 +28,59 @@
   padding-right: 4rem;
 }
 
+.blog-controls {
+  display: flex;
+  gap: 0.75em;
+  margin-bottom: 1.5em;
+}
+
+.blog-controls button {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  background: none;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  padding: 0.4em 0.7em;
+  cursor: pointer;
+  color: currentColor;
+  font-size: 0.6rem;
+}
+
+.blog-controls .btn-icon svg {
+  width: 1.1em;
+  height: 1.1em;
+  fill: none;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* Zensical's admonition CSS auto-applies to any bare <details>
+   element, adding a default icon (shows as a paper clip here) and a
+   background tint meant for actual admonition blocks. Neither is
+   wanted on these month-group collapsibles, so both are reset here. */
+
+.md-typeset .month-group {
+  background: rgba(88, 166, 255, 0.05);
+  border: none;
+  box-shadow: none;
+}
+
+.month-group summary {
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.4em 0;
+}
+
+.month-group > summary::before {
+  display: none;
+}
+
+.month-group .recent-posts {
+  margin-top: 0.5em;
+  padding-left: 1.2em;
+}
 
 /* =============================================================================
    2. COLOR & THEME
@@ -148,6 +200,113 @@
   opacity: 0.6;
 }
 
+/* Blog post list — icon sized to match the title text exactly via em,
+   so it never drifts out of sync. !important on font-size overrides
+   are deliberate: Zensical's own theme CSS wins the normal cascade on
+   these selectors, same conflict pattern as the icon-size rule
+   earlier tonight — not general overuse. */
+
+.recent-posts,
+.recent-posts li {
+  list-style: none;
+}
+
+.recent-posts {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.recent-posts li {
+  margin-bottom: 1.5em;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.post-header .post-title {
+  font-size: 0.8rem !important;
+  font-weight: 500;
+}
+
+.post-header .post-icon {
+  flex-shrink: 0;
+}
+
+.post-header .post-icon svg {
+  width: 1.5em;
+  height: 1.5em;
+  max-width: none;
+  vertical-align: -0.45em;
+  fill: none;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.post-icon-inline svg {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  vertical-align: -0.15em;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.post-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.5rem;
+}
+
+.post-nav-icon svg {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  flex-shrink: 0;
+  vertical-align: -0.15em;
+}
+
+/* Date/time: italic, smaller, but the "|" separator inside it stays
+   upright — the .job-meta-sep span is reset back to normal style so
+   only the actual date/time text renders italic, not the pipe. */
+
+.recent-posts-more {
+  text-align: right;
+  font-size: 0.7rem !important;
+}
+
+.recent-posts-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.recent-posts .post-date {
+  font-size: 0.5rem !important;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.recent-posts .post-date .job-meta-sep {
+  font-style: normal;
+}
+
+.recent-posts .post-excerpt {
+  font-size: 0.6rem !important;
+  margin-top: 0.3em;
+}
+
 /* =============================================================================
    5. RESPONSIVE — mobile (≤600px)
    ============================================================================= */
@@ -185,5 +344,21 @@
 
   .glightbox-mobile .glightbox-container .gslide-desc a:hover {
     color: var(--md-accent-fg-color);
+  }
+
+  .blog-controls button {
+    font-size: 1rem;
+    padding-bottom: 0;
+  }
+
+  .blog-controls .btn-label {
+    display: none;
+  }
+
+  .post-header .post-icon svg {
+    height: 3em;
+    width: 3em;
+    max-width: none;
+    margin-right: 0.5em;
   }
 }

@@ -14,9 +14,10 @@ site_url = "https://edwardmcham.github.io/"
 # "Blog" points to index.md — the home page doubles as the blog's
 # landing page rather than having its own separate blog/index.md.
 nav = [
-    { "Blog" = "index.md" },
+    { "Home" = "index.md" },
     { "Resume" = "resume.md" },
     { "Portfolio" = "portfolio.md" },
+    { "Blog" = "blog.md" },
 ]
 
 extra_css = [
@@ -129,10 +130,27 @@ name = "Download PDF resume »"
 # Allows Markdown syntax inside raw HTML blocks flagged markdown="1".
 [project.markdown_extensions.md_in_html]
 
+# Highlight is required alongside SuperFences below -- it's what
+# SuperFences uses internally to perform syntax highlighting on code
+# blocks, even though no highlighting options are being customized here.
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+
 # Enables --8<-- "file" includes (used by index.md for the hero block).
 [project.markdown_extensions.pymdownx.snippets]
 base_path = ["includes"]
 check_paths = true
+
+# Enables real triple-backtick code fences (without this, fenced blocks
+# fall through as plain paragraph text instead of literal code -- this
+# is what caused Mermaid diagrams and HTML code examples to render as
+# broken live content instead of staying as code). The custom_fences
+# entry below additionally tells Zensical to treat ```mermaid blocks
+# as Mermaid.js diagrams rather than plain code.
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+    { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+]
 
 # Icon shortcodes, e.g. :fontawesome-solid-envelope:
 [project.markdown_extensions.pymdownx.emoji]
