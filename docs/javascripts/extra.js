@@ -9,12 +9,26 @@
    visible at a glance, in a clear, guaranteed order.
    ============================================================================= */
 
+/* Cached fetch of the external-link icon file — read from disk once,
+   reused for every matching link on the page. Same single-source
+   pattern as initNavIcons() below, so this SVG only needs editing in
+   one place: docs/assets/icons/external-link.svg */
+let _externalIconPromise = null;
+function getExternalIcon() {
+  if (!_externalIconPromise) {
+    _externalIconPromise = fetch("/assets/icons/external-link.svg").then(function(r) {
+      return r.text();
+    });
+  }
+  return _externalIconPromise;
+}
+
 /**
  * External link handling.
  * Adds target="_blank" + rel="noopener" to any link leaving the site
  * (different hostname), or any .pdf link — even a same-hostname
  * relative path, since a PDF is still effectively a download.
- * Appends a small arrow icon to those links, except ones inside
+ * Appends the external-link icon to those links, except ones inside
  * .social-icons or carrying the footer's md-social__link class —
  * those stay intentionally icon-free.
  */
@@ -30,9 +44,9 @@ function initExternalLinks() {
     }
 
     if (isExternal && !isSocial && !link.querySelector(".external-link-icon")) {
-      link.insertAdjacentHTML("beforeend",
-        '<span class="external-link-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M288 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h50.7L169.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L384 141.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H288zM80 64C35.8 64 0 99.8 0 144V400c0 44.2 35.8 80 80 80H336c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16h80c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg></span>'
-      );
+      getExternalIcon().then(function(svg) {
+        link.insertAdjacentHTML("beforeend", '<span class="external-link-icon">' + svg + '</span>');
+      });
     }
   });
 }
@@ -63,38 +77,44 @@ function updateCopyrightYear() {
 }
 
 /**
- * Job-meta separator spacing.
- * Two different HTML shapes get the same treatment:
- *   Case A — job entries: several <em> tags (company, location, dates)
- *   with bare "|" text nodes between them as siblings inside one <p>.
- *   Case B — header subtitle: one <strong> tag with "|" inside its
- *   own continuous text run.
- * Both get the "|" wrapped in <span class="job-meta-sep"> so extra.css
- * can add spacing — plain text alone can't be targeted by CSS.
+ * Pipe separator spacing.
+ * Wraps every "|" character found in the resume page's text — job
+ * entries, the header subtitle, and Education/Certifications lines —
+ * in a <span> so extra.css can add breathing room around it. Handles
+ * any surrounding structure (link before, <em> after, plain text on
+ * both sides, or nothing) rather than needing a separate case for
+ * each pattern, since a plain "|" character can't be targeted by CSS
+ * on its own.
  */
-function initJobMetaSeparators() {
-  var seen = new Set();
+function initPipeSeparators() {
+  var root = document.querySelector(".md-content__inner.md-typeset");
+  if (!root) return;
 
-  document.querySelectorAll(".md-typeset em").forEach(function(em) {
-    var p = em.parentElement;
-    if (p.tagName !== "P" || seen.has(p)) return;
-    seen.add(p);
-    if (!p.textContent.includes("|")) return;
+  var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  var nodes = [];
+  while (walker.nextNode()) {
+    var node = walker.currentNode;
+    // Skip anything already inside a previously-wrapped separator,
+    // so re-running this doesn't double-wrap.
+    if (node.parentElement.closest(".job-meta-sep")) continue;
+    if (node.nodeValue.indexOf("|") !== -1) nodes.push(node);
+  }
 
-    Array.from(p.childNodes).forEach(function(node) {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === "|") {
+  nodes.forEach(function(node) {
+    var parts = node.nodeValue.split("|");
+    if (parts.length < 2) return;
+
+    var frag = document.createDocumentFragment();
+    parts.forEach(function(part, i) {
+      frag.appendChild(document.createTextNode(part));
+      if (i < parts.length - 1) {
         var span = document.createElement("span");
         span.className = "job-meta-sep";
         span.textContent = "|";
-        node.replaceWith(span);
+        frag.appendChild(span);
       }
     });
-  });
-
-  document.querySelectorAll(".md-typeset strong").forEach(function(strong) {
-    if (strong.innerHTML.includes(" | ") && !strong.querySelector(".job-meta-sep")) {
-      strong.innerHTML = strong.innerHTML.replace(/\s\|\s/g, ' <span class="job-meta-sep">|</span> ');
-    }
+    node.replaceWith(frag);
   });
 }
 
@@ -135,6 +155,6 @@ document$.subscribe(function() {
   initExternalLinks();
   initGLightbox();
   updateCopyrightYear();
-  initJobMetaSeparators();
+  initPipeSeparators();
   initNavIcons();
 });

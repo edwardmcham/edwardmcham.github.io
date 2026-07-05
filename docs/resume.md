@@ -119,8 +119,7 @@ Used HTML, CSS, JS, jQuery, and MVC to update store pages.
 
 ### Technical Writer Certification
 
-[Technical Writer HQ](https://technicalwriterhq.com/wp-content/uploads/2026/06/Edward-McHam.pdf)
-_June 2026_
+[Technical Writer HQ](https://technicalwriterhq.com/wp-content/uploads/2026/06/Edward-McHam.pdf) | _June 2026_
 
 ### ATD TechComm SIG
 
@@ -128,10 +127,8 @@ _June 2026_
 
 ### API Documentation
 
-University of Washington (online)
-_December 2025_
+University of Washington (online) | _December 2025_
 
 ### B.Sc., Computer Information Systems
 
-East Texas Baptist University
-_Marshall, TX_
+East Texas Baptist University | _Marshall, TX_
