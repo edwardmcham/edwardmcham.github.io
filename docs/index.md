@@ -1,5 +1,5 @@
 ---
-icon: lucide/newspaper
+icon: lucide/home
 tags:
   - Blog
   - Announcements

@@ -1,4 +1,5 @@
 ---
+icon: lucide/newspaper
 tags:
   - Blog
 ---

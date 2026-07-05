@@ -121,9 +121,9 @@ function initPipeSeparators() {
 function initNavIcons() {
   var iconMap = {
     "": "home",
-    "blog/": "newspaper",
     "resume/": "file-user",
-    "portfolio/": "layout-grid"
+    "portfolio/": "layout-grid",
+    "blog/": "newspaper"
   };
   document.querySelectorAll(".md-tabs__link").forEach(function(link) {
     var path = new URL(link.href).pathname.replace(/^\//, "");

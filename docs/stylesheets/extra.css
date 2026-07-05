@@ -91,6 +91,16 @@
   --md-default-bg-color: #ececec;
 }
 
+/* Nav tab text color in dark mode only — creamy yellow */
+[data-md-color-scheme="slate"] .post-nav a {
+  color: #f5e6b3;
+}
+
+[data-md-color-scheme="slate"] .post-nav a:hover {
+  color: #f5e6b3;
+  opacity: 1;
+}
+
 
 /* =============================================================================
    3. TYPOGRAPHY
@@ -360,5 +370,19 @@
     width: 3em;
     max-width: none;
     margin-right: 0.5em;
+  }
+
+  .post-nav {
+    gap: 1.2em;
+  }
+
+  .post-nav a {
+    font-size: 0.6rem;
+    gap: 0.5em;
+  }
+
+  .post-nav-icon svg {
+    width: 2em;
+    height: 2em;
   }
 }
