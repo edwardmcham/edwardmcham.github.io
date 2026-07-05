@@ -1,7 +1,8 @@
-/* ============================================================
-   Homepage hero banner — earth-boy-on-moon logo + site title
-   ============================================================ */
+/* =============================================================================
+   1. LAYOUT & STRUCTURE
+   ============================================================================= */
 
+/* Homepage hero banner — earth-boy-on-moon photo + site title */
 .hero {
   display: flex;
   align-items: center;
@@ -9,16 +10,49 @@
   margin-bottom: 2rem;
 }
 
-/* Pull the social/PDF icon row up under the hero subtitle */
+.hero-image {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* The social/PDF icon row is the paragraph immediately following the
+   hero block in index.md — no class needed, targeted by position. */
 .hero + p {
   margin: -4.5em 0 4em 0;
   margin-left: 11rem;
 }
 
-.hero-image {
-  width: 180px;
-  height: auto;
-  flex-shrink: 0;
+/* Extra right-side buffer on the main content area, desktop only
+   (removed again in the mobile media query below) */
+.md-content {
+  padding-right: 4rem;
+}
+
+
+/* =============================================================================
+   2. COLOR & THEME
+   ============================================================================= */
+
+/* Light mode background override */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #ececec;
+}
+
+
+/* =============================================================================
+   3. TYPOGRAPHY
+   ============================================================================= */
+
+.hero-text h1,
+.md-typeset h1 {
+  font-weight: 450;   /* Montserrat SemiBold */
+}
+
+.hero-text h2,
+.md-typeset h2,
+.md-typeset h3 {
+  font-weight: 350;
 }
 
 .hero-text h1 {
@@ -31,40 +65,17 @@
   opacity: 0.8;
 }
 
-/* ===============================================================
-   Add more right-side buffer to main content area (except mobile)
-   =============================================================== */
-
-.md-content {
-  padding-right: 4rem;
-}
-
-/* ============================================================
-   Sepia background — light mode only
-   ============================================================ */
-
-[data-md-color-scheme="default"] {
-  --md-default-bg-color: #ececec;
-}
-
-/* Headings and site name use Montserrat SemiBold; body stays Regular */
-.hero-text h1,
-.md-typeset h1 {
-  font-weight: 450;
-}
-
-.hero-text h2,
-.md-typeset h2,
-.md-typeset h3 {
-  font-weight: 350;
-}
-
-/* Top header site name also uses SemiBold */
 .md-ellipsis {
-  font-weight: 350;
+  font-weight: 350;   /* top header site name */
 }
 
-/* Certificate badges in footer */
+
+/* =============================================================================
+   4. COMPONENTS
+   ============================================================================= */
+
+/* --- Footer: certification badge + social icon row ---------------------- */
+
 .md-badge {
   max-height: 75px;
 }
@@ -73,7 +84,8 @@
   align-items: center;
 }
 
-/* Match GLightbox caption links to site link color */
+/* --- GLightbox modal captions — match site link color -------------------- */
+
 .gslide-description a {
   color: var(--md-typeset-a-color, var(--md-primary-fg-color));
 }
@@ -82,7 +94,8 @@
   color: var(--md-accent-fg-color);
 }
 
-/* Social icons row in hero and resume pages; float PDF icon to the right since it's always last */
+/* --- Inline social/PDF icon row (home + resume pages) -------------------- */
+
 .social-icons {
   display: flex;
   align-items: center;
@@ -91,12 +104,16 @@
   gap: 0.5em;
 }
 
+/* PDF is always last in the config array — push it to the far
+   right and color it distinctly from the rest of the row. */
 .social-icons a:last-child {
   margin-left: auto;
   color: darkred;
 }
 
-/* Enlarge inline icons and footer social icons for readability */
+/* Zensical's own theme CSS sets a competing max-height on this same
+   selector — !important is required to win that specific conflict,
+   not a general workaround. */
 .md-typeset .twemoji svg,
 .md-social__link svg {
   width: 2em !important;
@@ -104,7 +121,8 @@
   max-height: 2em !important;
 }
 
-/* External link icon next to links that open in a new tab/window, kept at normal size */
+/* Small "opens in new tab" arrow appended by extra.js — sized
+   independently so it doesn't inherit the 2em icon size above. */
 .external-link-icon svg {
   width: 1em;
   height: 1em;
@@ -113,7 +131,11 @@
   fill: currentColor;
 }
 
-/* Stack vertically and center on narrow / mobile screens */
+
+/* =============================================================================
+   5. RESPONSIVE — mobile (≤600px)
+   ============================================================================= */
+
 @media (max-width: 600px) {
   .hero {
     flex-direction: column;
@@ -122,6 +144,14 @@
 
   .hero + p {
     margin-top: -2.5em;
+    margin-left: 0;
+  }
+
+  .hero + p .social-icons {
+    justify-content: center;
+  }
+
+  .social-icons a:last-child {
     margin-left: 0;
   }
 
@@ -139,13 +169,5 @@
 
   .glightbox-mobile .glightbox-container .gslide-desc a:hover {
     color: var(--md-accent-fg-color);
-  }
-
-  .hero + p .social-icons {
-    justify-content: center;
-  }
-
-  .social-icons a:last-child {
-    margin-left: 0;
   }
 }

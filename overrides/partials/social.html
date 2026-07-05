@@ -1,5 +1,17 @@
 {#-
-  This file was automatically generated - do not edit
+  Customized override of Zensical's built-in footer partial (the
+  original ships with a "do not edit" notice — this version deviates
+  from it in two places, noted below).
+
+  1. Email icon: href is rebuilt from config.extra.site_author_email
+     instead of social.link, so the address is single-sourced in one
+     TOML setting rather than duplicated in the social array.
+  2. PDF icon: href passes through the `| url` filter, which recomputes
+     the correct relative path for whatever depth the current page
+     sits at (root vs. /resume/ vs. /portfolio/) — a plain relative
+     path only resolves correctly from one depth.
+
+  Upstream fallback: derives a title from the URL if an entry has no name. Unused in this config since every entry has one, kept for robustness.
 -#}
 {% macro split_and_get(value, sep, index) %}
   {%- if value.split is defined -%}

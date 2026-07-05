@@ -1,3 +1,11 @@
+<!--
+  Snippets include (--8<--) for the home page hero, referenced from
+  index.md. Deliberately plain HTML — no Markdown syntax or Jinja {{ }}
+  calls inside it. Content pulled in through a Snippets include is not
+  processed by the Macros extension (Macros only runs on a page's own
+  source, before Snippets expands any included file), so anything
+  needing a {{ }} variable has to live directly in index.md instead.
+-->
 <div class="hero">
   <img src="assets/earth-boy-on-moon.webp" alt="Eddie c.1976" class="hero-image">
   <div class="hero-text">

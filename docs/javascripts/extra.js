@@ -1,4 +1,12 @@
-// Add target="_blank" and rel="noopener" to external links, and append an external link icon
+/* =============================================================================
+   External link handling
+   - Adds target="_blank" + rel="noopener" to any link leaving the site
+     (different hostname), or any .pdf link — even a same-hostname
+     relative path, since a PDF is still effectively a download.
+   - Appends a small arrow icon to those links, except ones inside
+     .social-icons or carrying the footer's md-social__link class —
+     those stay intentionally icon-free.
+   ============================================================================= */
 document$.subscribe(function() {
   document.querySelectorAll(".md-content a").forEach(function(link) {
     var isSocial = link.classList.contains("md-social__link") || link.closest(".social-icons");
@@ -18,7 +26,10 @@ document$.subscribe(function() {
   });
 });
 
-// Initialize GLightbox for any elements with the class "glightbox" when the document is ready
+/* =============================================================================
+   GLightbox init — enables the click-to-enlarge modal for any element
+   with class="glightbox" (the TWHQ certification badge in the footer).
+   ============================================================================= */
 document$.subscribe(function() {
   const lightbox = GLightbox({
     selector: '.glightbox',
@@ -28,5 +39,17 @@ document$.subscribe(function() {
   });
 });
 
-// Update the copyright year in the footer dynamically
-document.getElementById("copyright-year").textContent = new Date().getFullYear();
+/* =============================================================================
+   Footer copyright year — keeps "© <year>" current with no manual edit.
+   Wrapped in document$.subscribe (not run once at load) so it still
+   works correctly if navigation.instant is ever added to zensical.toml —
+   that feature swaps page content without a full reload, which would
+   otherwise skip this line on later page views. The null check avoids
+   a console error on any page where the element doesn't exist.
+   ============================================================================= */
+document$.subscribe(function() {
+  const yearEl = document.getElementById("copyright-year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+});

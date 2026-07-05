@@ -1,13 +1,24 @@
+# =============================================================================
+# emcham.io — Zensical site configuration
+#
+# Customizations beyond the project scaffold are documented inline below.
+# Everything else is scaffold default / native Zensical behavior.
+# =============================================================================
+
 [project]
 site_name = "emcham.io"
 site_description = "EDWARD McHAM | Senior Technical Writer / Documentation Engineer"
 site_author = "Edward McHam"
 site_url = "https://edwardmcham.github.io/"
+
+# "Blog" points to index.md — the home page doubles as the blog's
+# landing page rather than having its own separate blog/index.md.
 nav = [
     { "Blog" = "index.md" },
     { "Resume" = "resume.md" },
     { "Portfolio" = "portfolio.md" },
 ]
+
 extra_css = [
     "stylesheets/glightbox.min.css",
     "stylesheets/extra.css",
@@ -27,7 +38,7 @@ features = [
   "navigation.footer"
 ]
 favicon = "assets/favicon.png"
-custom_dir = "overrides"
+custom_dir = "overrides"   # -> overrides/partials/social.html
 
 [project.theme.font]
 text = "Montserrat"
@@ -53,6 +64,24 @@ scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
 
+# -----------------------------------------------------------------------
+# site_author_email declared before the social array that depends on it,
+# so the single-sourced setting reads first, not as an afterthought.
+# Every mailto: link site-wide (footer + inline rows) reads from this
+# one value — see main.py and overrides/partials/social.html.
+# -----------------------------------------------------------------------
+[project.extra]
+site_author_email = "edward.mcham@gmail.com"
+
+# -----------------------------------------------------------------------
+# Single source of truth for every contact/social icon on the site — both
+# the footer (overrides/partials/social.html) and the inline row on the
+# home/resume pages (main.py's social_icons() macro) read this same list.
+# Edit an icon, link, or name here once; it updates everywhere.
+#
+# Email's `link` is intentionally blank — the real address comes from
+# site_author_email above instead, single-sourced in one setting.
+# -----------------------------------------------------------------------
 [[project.extra.social]]
 icon = "fontawesome/solid/envelope"
 link = ""
@@ -83,28 +112,39 @@ icon = "fontawesome/brands/youtube"
 link = "https://www.youtube.com/@emcham-io"
 name = "Eddie on YouTube »"
 
+# Stored relative to docs/ (no leading "../"). The footer template
+# applies Zensical's `| url` filter to this one link so it resolves
+# correctly regardless of page depth (root vs. /resume/ vs. /portfolio/)
+# — see overrides/partials/social.html.
 [[project.extra.social]]
 icon = "fontawesome/solid/file-pdf"
 link = "assets/RESUME_EDWARD_McHAM_Senior_Technical_Writer_Documentation_Engineer.pdf"
 name = "Download PDF resume »"
 
-[project.extra]
-site_author_email = "edward.mcham@gmail.com"
+# -----------------------------------------------------------------------
+# Markdown extensions, grouped: core parsing first, then feature-
+# specific integrations built on top of it.
+# -----------------------------------------------------------------------
 
+# Allows Markdown syntax inside raw HTML blocks flagged markdown="1".
+[project.markdown_extensions.md_in_html]
+
+# Enables --8<-- "file" includes (used by index.md for the hero block).
 [project.markdown_extensions.pymdownx.snippets]
 base_path = ["includes"]
 check_paths = true
 
-[project.markdown_extensions.md_in_html]
+# Icon shortcodes, e.g. :fontawesome-solid-envelope:
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
 
 [project.markdown_extensions.zensical.extensions.glightbox]
 auto = false
 width = "600px"
 height = "auto"
 
-[project.markdown_extensions.pymdownx.emoji]
-emoji_index = "zensical.extensions.emoji.twemoji"
-emoji_generator = "zensical.extensions.emoji.to_svg"
-
+# render_by_default = true turns on Jinja2 processing ({{ }} expressions)
+# site-wide, not just on pages that opt in individually.
 [project.markdown_extensions.zensical.extensions.macros]
 render_by_default = true
