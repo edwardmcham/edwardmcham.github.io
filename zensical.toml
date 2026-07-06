@@ -110,7 +110,7 @@ name = "Eddie on GitHub »"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/youtube"
-link = "https://www.youtube.com/@emcham-io"
+link = "https://www.youtube.com/@emcham-io/playlists"
 name = "Eddie on YouTube »"
 
 # Stored relative to docs/ (no leading "../"). The footer template
