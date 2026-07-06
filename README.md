@@ -25,7 +25,7 @@ Migrating resume and portfolio from WordPress to [Zensical][1].
 - Filterable keyword search
 - Mobile-friendly
 - Light / dark / auto mode
-- Snippets, custom `main.py`, and HTML overrides => content reuse, which Markdown by itself doesn't provide
+- Snippets, custom `main.py`, and HTML overrides `=>` content reuse, which Markdown by itself doesn't provide
 - Custom PowerShell script `=>` quick blog post creation based on my own custom MD template, complete w/YAML front matter `=>` blog post tagging / search filtering
 - Custom batch script `=>` starts up new VSCode terminal, builds and opens new Zensical localhost `=>` quick / easy QA
 
