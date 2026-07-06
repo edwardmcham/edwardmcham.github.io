@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalIndex
+  SavedSource="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/UltimateChess/Output/Eddie_McHam/Temporary/GlobalIndex v.6.catapultindex">
+  <IndexEntry>
+    <Entries />
+    <Links />
+    <SeeAlsoLinks />
+    <IndexControlLinks />
+    <SortAsLinks />
+  </IndexEntry>
+  <SourceUrls>
+    <Url
+      Source="Components.htm" />
+    <Url
+      Source="Core Rule The Card Battle.htm" />
+    <Url
+      Source="Dice Variant.htm" />
+    <Url
+      Source="King Rules.htm" />
+    <Url
+      Source="Overview.htm" />
+    <Url
+      Source="Quick Reference.htm" />
+    <Url
+      Source="Sniper Rules.htm" />
+    <Url
+      Source="Win Conditions.htm" />
+    <Url
+      Source="Resources/Images/armageddon.jpg" />
+    <Url
+      Source="Resources/Images/cards.png" />
+    <Url
+      Source="Resources/Images/card_battle_flowchart.png" />
+    <Url
+      Source="Resources/Images/chess-king.png" />
+    <Url
+      Source="Resources/Images/chess_set_starting_position.png" />
+    <Url
+      Source="Resources/Images/evil_joker_card.jpg" />
+    <Url
+      Source="Resources/Images/Logo.png" />
+    <Url
+      Source="Resources/PageLayouts/Default.flpgl" />
+    <Url
+      Source="Resources/Stylesheets/01-overview.css" />
+    <Url
+      Source="Resources/Stylesheets/Styles.css" />
+  </SourceUrls>
+  <SourceLinkSetUrls>
+    <Url
+      Source="Advanced/Index Link Sets/IndexLinkSet.flixl" />
+  </SourceLinkSetUrls>
+  <UsedUrls />
+  <UsedIndexControlUrls />
+</CatapultGlobalIndex>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileTitle=""
+  FileSearchable="true"
+  OnlyLocalStylesheets="false"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Resources/Images/cards.png" />
+    <Link
+      Url="Content/Resources/Images/chess_set_starting_position.png" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm" />
+    <Link
+      Url="Content/Overview.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Resources/Images/cards.png" />
+    <Link
+      Url="Content/Resources/Images/chess_set_starting_position.png" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm" />
+    <Link
+      Url="Content/Overview.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords>
+    <IndexCacheEntry
+      Term="Components"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Jokers:Components"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Cards:Components"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Card battles:Components"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+  </Keywords>
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/Stylesheets/01-overview.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalGlossaryCache
+  SavedSource="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/UltimateChess/Output/Eddie_McHam/Temporary/GlobalGlossarySet v.2.xml">
+  <Map>
+    <GlossaryCacheEntry
+      Term="Sniper"
+      glossTerm="Glossary.Term0"
+      SourceFile="/Project/Glossaries/Glossary.flglo">
+      <Definition
+        Link="">The name assigned to Jokers in playing cards. Win a card battle with a Sniper to capture your opponent's piece PLUS one additional non-King piece. If players tie a card battle with Snipers, Armageddon ensues.</Definition>
+    </GlossaryCacheEntry>
+    <GlossaryCacheEntry
+      Term="Armageddon"
+      glossTerm="Glossary.Term1"
+      SourceFile="/Project/Glossaries/Glossary.flglo">
+      <Definition
+        Link="">Occurs when players tie a Card Battle with Snipers. BOTH attacking and defending pieces die, and BOTH players take THREE random non-King pieces from each other's armies.</Definition>
+    </GlossaryCacheEntry>
+    <GlossaryCacheEntry
+      Term="Card battle"
+      glossTerm="Glossary.Term2"
+      SourceFile="/Project/Glossaries/Glossary.flglo">
+      <Definition
+        Link="">Determines whether an attempted Chess piece capture is successful. If you are attacking and win the card battle, you may capture the intended piece as in regular Chess. If you lose the card battle, your attacking piece dies, and the targeted piece remains where he is. If players tie a card battle, both Chess pieces remain where they are.</Definition>
+    </GlossaryCacheEntry>
+  </Map>
+  <SourceUrls />
+</CatapultGlobalGlossaryCache>

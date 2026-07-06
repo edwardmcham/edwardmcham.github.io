@@ -33,7 +33,7 @@ AI, Azure VMs, Balsamiq, ChatGPT, Claude, Confluence, Copilot, DITA, Drupal, Fra
 *SteelCloud LLC* | *Ashburn, VA* | *Feb 2023 – Present*
 
 - Using FrameMaker to single-source user, installation, and quick reference guides for ConfigOS MPO, which automates DISA STIG/CIS endpoint compliance for IT security administrators.
-- Overseeing conversion from PDF documentation to [Zensical](https://zensical.com/), providing the following content benefits:
+- Overseeing conversion from PDF documentation to [Zensical](https://zensical.org/), providing the following content benefits:
 
     - Fast and searchable
     - Mobile and printer-friendly

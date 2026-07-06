@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileTitle=""
+  FileSearchable="true"
+  OnlyLocalStylesheets="false"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm" />
+    <Link
+      Url="Content/Dice Variant.htm" />
+    <Link
+      Url="Content/Components.htm" />
+    <Link
+      Url="Content/King Rules.htm" />
+    <Link
+      Url="Content/Sniper Rules.htm" />
+    <Link
+      Url="Content/Win Conditions.htm" />
+    <Link
+      Url="Content/Quick Reference.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm" />
+    <Link
+      Url="Content/Dice Variant.htm" />
+    <Link
+      Url="Content/Components.htm" />
+    <Link
+      Url="Content/King Rules.htm" />
+    <Link
+      Url="Content/Sniper Rules.htm" />
+    <Link
+      Url="Content/Win Conditions.htm" />
+    <Link
+      Url="Content/Quick Reference.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords>
+    <IndexCacheEntry
+      Term="Card battles"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="War (card game)"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Jokers"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Dice"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Kings"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Snipers"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Win conditions"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Quick reference"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+  </Keywords>
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/Stylesheets/01-overview.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>

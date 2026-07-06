@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileTitle=""
+  FileSearchable="true"
+  OnlyLocalStylesheets="false"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Resources/Images/chess-king.png" />
+    <Link
+      Url="Content/Sniper Rules.htm" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Resources/Images/chess-king.png" />
+    <Link
+      Url="Content/Sniper Rules.htm" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm#armageddon-both-players-play-a-sniper" />
+  </LongLinks>
+  <Anchors />
+  <Keywords>
+    <IndexCacheEntry
+      Term="Kings:Rules"
+      Conditions=""
+      LocalConditions=""
+      Position="7" />
+    <IndexCacheEntry
+      Term="Rules:Kings"
+      Conditions=""
+      LocalConditions=""
+      Position="7" />
+    <IndexCacheEntry
+      Term="Capturing kings"
+      Conditions=""
+      LocalConditions=""
+      Position="7" />
+    <IndexCacheEntry
+      Term="Snipers:King rules"
+      Conditions=""
+      LocalConditions=""
+      Position="7" />
+    <IndexCacheEntry
+      Term="Armageddon:King rules"
+      Conditions=""
+      LocalConditions=""
+      Position="7" />
+  </Keywords>
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/Stylesheets/01-overview.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>

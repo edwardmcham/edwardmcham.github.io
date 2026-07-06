@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      version="5.0"
+      xml:lang="en">
+
+  <info>
+    <title>Ultimate Chess</title>
+    <subtitle>Rulebook</subtitle>
+    <abstract>
+      <para>For players who already know standard chess. This rulebook covers
+      only the rules that differ from standard chess. Piece movement, turn
+      order, castling, en passant, and promotion follow standard chess rules
+      unless otherwise noted here.</para>
+    </abstract>
+    <author>
+      <personname>
+        <firstname>Edward</firstname>
+        <surname>McHam</surname>
+      </personname>
+    </author>
+    <copyright>
+      <year>2026</year>
+      <holder>Edward McHam</holder>
+    </copyright>
+  </info>
+
+  <!-- CHAPTER 1: OVERVIEW -->
+  <chapter xml:id="overview">
+    <title>Overview</title>
+    <para>Ultimate Chess is a variant of standard chess in which captures
+    are never automatic. Instead, every attempted capture triggers a
+    <firstterm>card battle</firstterm> — a round of War played with a
+    standard deck. Luck, timing, and risk management layer on top of
+    positional chess strategy.</para>
+    <para>This rulebook covers only the rules that differ from standard
+    chess. Piece movement, turn order, castling, en passant, and promotion
+    follow standard chess rules unless otherwise noted here.</para>
+    <note>
+      <para>Both players need a full standard deck of cards including both
+      Jokers before the game begins. Alternatively, see
+      <xref linkend="dice-variant"/> for a card-free option.</para>
+    </note>
+  </chapter>
+
+  <!-- CHAPTER 2: COMPONENTS -->
+  <chapter xml:id="components">
+    <title>Components</title>
+    <itemizedlist>
+      <listitem><para>Standard chess set (board and all pieces)</para></listitem>
+      <listitem><para>Two standard 52-card decks with Jokers — one per player</para></listitem>
+    </itemizedlist>
+    <para>Each player owns and shuffles their own deck. Both decks are
+    independent; you always draw from and play cards from your own
+    deck.</para>
+  </chapter>
+
+  <!-- CHAPTER 3: THE CARD BATTLE -->
+  <chapter xml:id="card-battle">
+    <title>Core Rule: The Card Battle</title>
+    <para>Whenever a player attempts to capture an opponent's piece, both
+    players resolve a card battle before the capture occurs. The outcome
+    determines whether the capture succeeds.</para>
+
+    <section xml:id="card-battle-procedure">
+      <title>How to Play a Card Battle</title>
+      <procedure>
+        <step><para>The attacking player declares the capture by moving their
+        piece to the target square.</para></step>
+        <step><para>Both players simultaneously place 3 cards
+        <emphasis>face-down</emphasis>, then 1 card
+        <emphasis>face-up</emphasis>.</para></step>
+        <step><para>Compare the face-up cards. The higher card wins.</para></step>
+        <step><para>Apply the outcome (see <xref linkend="card-battle-outcomes"/>).</para></step>
+      </procedure>
+    </section>
+
+    <section xml:id="card-rankings">
+      <title>Card Rankings</title>
+      <informaltable frame="all">
+        <tgroup cols="2">
+          <colspec colwidth="1*"/>
+          <colspec colwidth="3*"/>
+          <thead>
+            <row><entry>Rank</entry><entry>Notes</entry></row>
+          </thead>
+          <tbody>
+            <row><entry>Joker (Sniper)</entry><entry>Highest possible card. Trumps Aces. See <xref linkend="sniper-rules"/>.</entry></row>
+            <row><entry>Ace</entry><entry>Second highest. Beats all numbered cards.</entry></row>
+            <row><entry>King through 2</entry><entry>Standard descending rank. King (K) high, 2 low.</entry></row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="card-battle-outcomes">
+      <title>Card Battle Outcomes</title>
+      <informaltable frame="all">
+        <tgroup cols="3">
+          <colspec colwidth="1*"/>
+          <colspec colwidth="2*"/>
+          <colspec colwidth="2*"/>
+          <thead>
+            <row><entry>Result</entry><entry>What Happens</entry><entry>Notes</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Attacker wins</entry>
+              <entry>Capture succeeds. Attacker's piece moves to the target square. Captured piece is removed.</entry>
+              <entry>Standard capture.</entry>
+            </row>
+            <row>
+              <entry>Defender wins</entry>
+              <entry>Attacker's piece returns to its original square.</entry>
+              <entry>Capture attempt fails.</entry>
+            </row>
+            <row>
+              <entry>Tie (no Jokers)</entry>
+              <entry>The attacking piece returns to its original square. The turn is consumed. Neither player loses a piece.</entry>
+              <entry>Re-attempt on a future turn.</entry>
+            </row>
+            <row>
+              <entry>Attacker wins with Joker</entry>
+              <entry>Capture succeeds AND the attacker takes one additional non-King piece of their choice.</entry>
+              <entry>See <xref linkend="sniper-win"/>.</entry>
+            </row>
+            <row>
+              <entry>Tie (both Jokers)</entry>
+              <entry>ARMAGEDDON. Both pieces are removed AND each player removes three non-King pieces of their choice.</entry>
+              <entry>See <xref linkend="armageddon"/>.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+  </chapter>
+
+  <!-- CHAPTER 4: KING RULES -->
+  <chapter xml:id="king-rules">
+    <title>King Rules</title>
+    <para>Ultimate Chess has no check or checkmate. Kings are powerful,
+    mobile, and mortal.</para>
+
+    <section xml:id="kings-move-freely">
+      <title>Kings Can Move Freely</title>
+      <para>A King may move into any square, including squares attacked by
+      the opponent. There is no obligation to move out of attack, and no
+      illegal moves based on King safety.</para>
+    </section>
+
+    <section xml:id="capturing-a-king">
+      <title>Capturing a King</title>
+      <para>Attacking a King requires winning a best-of-three card battle
+      rather than a single round.</para>
+      <procedure>
+        <step><para>Play up to three card battle rounds.</para></step>
+        <step><para>The first player to win two rounds captures the King and
+        wins the game.</para></step>
+        <step><para>If the battle ends 1–1 after two rounds, play a third and
+        final round.</para></step>
+      </procedure>
+      <note>
+        <para>The Joker rules still apply within King battles. A Joker win
+        in any single round counts as winning that round.</para>
+      </note>
+    </section>
+
+    <section xml:id="king-attacks-non-king">
+      <title>King Capturing a Non-King Piece</title>
+      <para>When a King attacks a non-King piece, it plays a standard
+      single-round card battle.</para>
+      <important>
+        <para>If the King loses the card battle, the King is captured and
+        the attacking player loses the game immediately. Moving a King into
+        a capture attempt is a gamble.</para>
+      </important>
+    </section>
+
+    <section xml:id="last-piece-standing">
+      <title>Last Piece Standing</title>
+      <para>If a player has no non-King pieces remaining, Joker and Sniper
+      rules change:</para>
+      <itemizedlist>
+        <listitem><para>A Joker win counts as a standard card battle win
+        only — no bonus piece is taken.</para></listitem>
+        <listitem><para>Armageddon — both Jokers — also resolves as a
+        standard tie with no bonus pieces.</para></listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+
+  <!-- CHAPTER 5: SNIPER RULES -->
+  <chapter xml:id="sniper-rules">
+    <title>Sniper Rules</title>
+    <para>A Joker is called a <firstterm>Sniper</firstterm> in Ultimate
+    Chess.</para>
+
+    <section xml:id="sniper-win">
+      <title>Winning with a Sniper</title>
+      <procedure>
+        <step><para>The attacker wins the card battle normally (the target
+        piece is captured).</para></step>
+        <step><para>The attacker then selects any one non-King piece from
+        the opponent's remaining army and removes it from the board without
+        a card battle.</para></step>
+      </procedure>
+      <note>
+        <para>The bonus piece removal is immediate and requires no
+        additional card play. The attacker chooses freely.</para>
+      </note>
+    </section>
+
+    <section xml:id="armageddon">
+      <title>Armageddon — Both Players Play a Sniper</title>
+      <para>If both players play a Joker as their face-up card in the same
+      round, Armageddon is triggered.</para>
+      <procedure>
+        <step><para>Both the attacking piece and the defending piece are
+        immediately removed from the board.</para></step>
+        <step><para>Each player then selects and removes three non-King
+        pieces from the opponent's army, without card battles.</para></step>
+        <step><para>Both players make their selections simultaneously — do
+        not wait for your opponent to choose first.</para></step>
+      </procedure>
+      <important>
+        <para>Armageddon can dramatically change the board state. If either
+        player has fewer than three non-King pieces remaining, they remove
+        as many as they have.</para>
+      </important>
+    </section>
+  </chapter>
+
+  <!-- CHAPTER 6: WIN CONDITIONS -->
+  <chapter xml:id="win-conditions">
+    <title>Win Conditions</title>
+    <para>A player wins when any of the following occurs:</para>
+    <itemizedlist>
+      <listitem><para>The opponent's King is captured in a King card battle
+      (best of three).</para></listitem>
+      <listitem><para>The opponent's King attempts to capture a piece, loses
+      the card battle, and is captured.</para></listitem>
+    </itemizedlist>
+    <para>There is no checkmate, stalemate, or draw by repetition in
+    Ultimate Chess. The game ends only when a King is captured.</para>
+    <note>
+      <para>Standard chess draw conditions — insufficient material, fifty-move
+      rule, and mutual agreement — may be adopted by house rule if both
+      players agree before the game begins.</para>
+    </note>
+  </chapter>
+
+  <!-- CHAPTER 7: DICE VARIANT -->
+  <chapter xml:id="dice-variant">
+    <title>Dice Variant</title>
+    <para>If playing cards are unavailable, use dice to resolve
+    captures.</para>
+
+    <section xml:id="standard-dice">
+      <title>Standard Dice</title>
+      <para>Each player rolls one six-sided die per capture attempt. Higher
+      roll wins. Reroll ties.</para>
+      <itemizedlist>
+        <listitem><para>Rolling doubles on two dice counts as a Sniper win —
+        apply <xref linkend="sniper-rules"/>.</para></listitem>
+      </itemizedlist>
+    </section>
+
+    <section xml:id="custom-dice">
+      <title>Custom Dice (D&amp;D Dice)</title>
+      <para>Players may agree on custom battle rules using polyhedral dice
+      (D4, D6, D8, D10, D12, D20). Establish house rules before the game
+      begins, including:</para>
+      <itemizedlist>
+        <listitem><para>Which die or dice each player rolls</para></listitem>
+        <listitem><para>What result counts as a Sniper equivalent</para></listitem>
+        <listitem><para>How to resolve ties</para></listitem>
+      </itemizedlist>
+      <note>
+        <para>Custom dice rules should be written down and agreed upon
+        before the game. The same rules must apply equally to both
+        players.</para>
+      </note>
+    </section>
+  </chapter>
+
+  <!-- CHAPTER 8: QUICK REFERENCE -->
+  <chapter xml:id="quick-reference">
+    <title>Quick Reference</title>
+    <informaltable frame="all">
+      <tgroup cols="2">
+        <colspec colwidth="1*"/>
+        <colspec colwidth="2*"/>
+        <thead>
+          <row><entry>Situation</entry><entry>Resolution</entry></row>
+        </thead>
+        <tbody>
+          <row><entry>Standard capture attempt</entry><entry>Play 3 face-down + 1 face-up. Higher card wins.</entry></row>
+          <row><entry>Attacker wins</entry><entry>Capture succeeds.</entry></row>
+          <row><entry>Defender wins</entry><entry>Attacker's piece is removed. Defender's piece stays.</entry></row>
+          <row><entry>Tie (no Jokers)</entry><entry>No pieces move or are removed. Turn consumed.</entry></row>
+          <row><entry>Attacker wins with Joker</entry><entry>Capture succeeds + take one bonus non-King piece.</entry></row>
+          <row><entry>Tie (both Jokers)</entry><entry>Armageddon: both pieces removed + each player removes 3 more non-King pieces.</entry></row>
+          <row><entry>Attacking a King</entry><entry>Best of three card battles. First to two wins captures the King.</entry></row>
+          <row><entry>King attacks, loses</entry><entry>King is captured. Attacking player loses immediately.</entry></row>
+          <row><entry>No cards available</entry><entry>Use the Dice Variant.</entry></row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </chapter>
+
+</book>

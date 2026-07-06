@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProject Version="1" MasterStylesheet="/Content/Resources/Stylesheets/01-overview.css" BrandingStylesheet="/Content/Resources/Branding/Branding.css" MasterPageLayout="/Content/Resources/PageLayouts/Default.flpgl" MasterStylesheetOverride="True" Comment="This template contains a minimum number of content and project files, including a single topic. It is the best choice for those who want to begin with a skeleton project.">
+    <Synchronize>
+        <Mapping ProjectPath="Content/Resources/Images/cards.png" ExternalPath="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/cards.png" />
+        <Mapping ProjectPath="Content/Resources/Images/chess_set_starting_position.png" ExternalPath="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/chess_set_starting_position.png" />
+        <Mapping ProjectPath="Content/Resources/Images/evil_joker_card.jpg" ExternalPath="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/evil_joker_card.jpg" />
+        <Mapping ProjectPath="Content/Resources/Images/armageddon.jpg" ExternalPath="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/armageddon.jpg" />
+        <Mapping ProjectPath="Content/Resources/Images/chess-king.png" ExternalPath="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/chess-king.png" />
+        <Mapping ProjectPath="Content/Resources/Images/card_battle_flowchart.png" ExternalPath="file:///C:/Users/Eddie McHam/Documents/emcham.io/docs/projects/flare/card_battle_flowchart.png" />
+    </Synchronize>
+</CatapultProject>

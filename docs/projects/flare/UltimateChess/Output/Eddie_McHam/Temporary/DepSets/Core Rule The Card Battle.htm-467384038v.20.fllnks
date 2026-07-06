@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileTitle=""
+  FileSearchable="true"
+  OnlyLocalStylesheets="false"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm" />
+    <Link
+      Url="Content/Sniper Rules.htm" />
+    <Link
+      Url="Content/Resources/Images/card_battle_flowchart.png" />
+    <Link
+      Url="Content/Components.htm" />
+    <Link
+      Url="Content/King Rules.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Stylesheets/01-overview.css" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm#card-battle-outcomes" />
+    <Link
+      Url="Content/Sniper Rules.htm" />
+    <Link
+      Url="Content/Resources/Images/card_battle_flowchart.png" />
+    <Link
+      Url="Content/Core Rule The Card Battle.htm#armageddon--both-players-play-a-sniper" />
+    <Link
+      Url="Content/Components.htm" />
+    <Link
+      Url="Content/King Rules.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords>
+    <IndexCacheEntry
+      Term="Rules:Card battles"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Card battles"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Jokers:Card battles"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Snipers:Card battles"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Kings:Card battles"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+    <IndexCacheEntry
+      Term="Armageddon:Card battles"
+      Conditions=""
+      LocalConditions=""
+      Position="6" />
+  </Keywords>
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/Stylesheets/01-overview.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>
