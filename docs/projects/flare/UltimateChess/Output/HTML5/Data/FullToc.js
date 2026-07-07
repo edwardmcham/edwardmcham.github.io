@@ -1,0 +1,13 @@
+var xmlFullTocData = "";
+xmlFullTocData += '<?xml version=\"1.0\" encoding=\"utf-8\"?>';
+xmlFullTocData += '<CatapultToc Version=\"1\" DescendantCount=\"8\">';
+xmlFullTocData += '    <TocEntry Title=\"Overview\" Link=\"/Content/Overview.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedResetPageLayout=\"true\" ComputedFirstTopic=\"true\" DescendantCount=\"0\" />';
+xmlFullTocData += '    <TocEntry Title=\"Components\" Link=\"/Content/Components.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedFirstTopic=\"false\" DescendantCount=\"0\" />';
+xmlFullTocData += '    <TocEntry Title=\"Core Rule: The Card Battle\" Link=\"/Content/Core Rule The Card Battle.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedFirstTopic=\"false\" DescendantCount=\"0\" />';
+xmlFullTocData += '    <TocEntry Title=\"King Rules\" Link=\"/Content/King Rules.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedFirstTopic=\"false\" DescendantCount=\"0\" />';
+xmlFullTocData += '    <TocEntry Title=\"Sniper Rules\" Link=\"/Content/Sniper Rules.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedFirstTopic=\"false\" DescendantCount=\"0\" />';
+xmlFullTocData += '    <TocEntry Title=\"Win Conditions\" Link=\"/Content/Win Conditions.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedFirstTopic=\"false\" DescendantCount=\"0\" />';
+xmlFullTocData += '    <TocEntry Title=\"Dice Variant\" Link=\"/Content/Dice Variant.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedFirstTopic=\"false\" DescendantCount=\"0\" />';
+xmlFullTocData += '    <TocEntry Title=\"Quick Reference\" Link=\"/Content/Quick Reference.htm\" xmlns:MadCap=\"http://www.madcapsoftware.com/Schemas/MadCap.xsd\" ComputedFirstTopic=\"false\" DescendantCount=\"0\" />';
+xmlFullTocData += '</CatapultToc>';
+MadCap.Utilities.Xhr._FilePathToXmlStringMap.Add('FullToc', xmlFullTocData);
