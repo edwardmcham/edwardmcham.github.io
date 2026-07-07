@@ -101,6 +101,44 @@
   opacity: 1;
 }
 
+/* Base badge icon: renders an external SVG via CSS mask so it can be recolored per theme */
+.badge-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+/* Icon-specific mask images */
+.badge-icon--github {
+  mask-image: url("../assets/icons/github.svg");
+  -webkit-mask-image: url("../assets/icons/github.svg");
+}
+
+.badge-icon--html {
+  mask-image: url("../assets/icons/monitor.svg");
+  -webkit-mask-image: url("../assets/icons/monitor.svg");
+}
+
+.badge-icon--new {
+  mask-image: url("../assets/icons/rocket.svg");
+  -webkit-mask-image: url("../assets/icons/rocket.svg");
+}
+
+.badge-icon--pdf {
+  mask-image: url("../assets/icons/file-pdf.svg");
+  -webkit-mask-image: url("../assets/icons/file-pdf.svg");
+}
+
+/* Recolor badge icons to a warm creamy yellow, dark mode only */
+[data-md-color-scheme="slate"] .badge-icon {
+  background-color: #f2d28c;
+}
 
 /* =============================================================================
    3. TYPOGRAPHY
