@@ -17,9 +17,9 @@ PDF, or both — so you can see the deliverable, not just a description of it.
 A rules reference for a custom chess variant, authored and single-sourced in
 MadCap Flare to produce both a searchable HTML5 site and a printable PDF.
 
-<span class="badge-icon badge-icon--html" aria-label="HTML"></span> <a href="https://edwardmcham.github.io/UltimateChess/Default.htm" target="_blank">View HTML5 rulebook</a>
-&nbsp;&nbsp;
-<span class="badge-icon badge-icon--pdf" aria-label="PDF"></span> <a href="https://edwardmcham.github.io/UltimateChess/UltimateChess-PDF.pdf" target="_blank">Download PDF</a>
-&nbsp;&nbsp;
-<span class="badge-icon badge-icon--github" aria-label="GitHub"></span> <a href="https://github.com/edwardmcham/UltimateChess" target="_blank">View on GitHub</a>
+<span class="badge-icon badge-icon--html" aria-label="HTML"></span> <a href="https://edwardmcham.github.io/UltimateChess/Default.htm" target="_blank">View HTML5 rule book »</a>
+
+<span class="badge-icon badge-icon--pdf" aria-label="PDF"></span> <a href="https://edwardmcham.github.io/UltimateChess/UltimateChess-PDF.pdf" target="_blank">Download PDF rule book »</a>
+
+<span class="badge-icon badge-icon--github" aria-label="GitHub"></span> <a href="https://github.com/edwardmcham/UltimateChess" target="_blank">View on GitHub »</a>
 

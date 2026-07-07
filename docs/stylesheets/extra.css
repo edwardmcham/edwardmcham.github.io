@@ -114,6 +114,11 @@
   -webkit-mask-size: contain;
 }
 
+.badge-icon + a {
+  margin-left: 0.3em;
+  vertical-align: middle;
+}
+
 /* Icon-specific mask images */
 .badge-icon--github {
   mask-image: url("../assets/icons/github.svg");
