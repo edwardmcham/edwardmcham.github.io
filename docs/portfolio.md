@@ -12,10 +12,9 @@ PDF, or both — so you can see the deliverable, not just a description of it.
 
 ## MadCap Flare
 
-**Ultimate Chess Rulebook** <span class="badge-icon badge-icon--new" aria-label="NEW"></span>
+**Ultimate Chess Rule Book** <span class="badge-icon badge-icon--new" aria-label="NEW"></span>
 
-A rules reference for a custom chess variant, authored and single-sourced in
-MadCap Flare to produce both a searchable HTML5 site and a printable PDF.
+A rules reference for a custom chess variant, authored and single-sourced in [MadCap Flare](https://www.madcapsoftware.com/products/flare/) to produce both a searchable HTML5 site and a printable PDF.
 
 <span class="badge-icon badge-icon--html" aria-label="HTML"></span> <a href="https://edwardmcham.github.io/UltimateChess/Default.htm" target="_blank">View HTML5 rule book »</a>
 
