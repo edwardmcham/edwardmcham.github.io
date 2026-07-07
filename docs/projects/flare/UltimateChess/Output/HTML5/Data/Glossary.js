@@ -1,1 +1,0 @@
-define({numchunks:1,prefix:'Glossary_Chunk',terms:[{t:'Armageddon',c:0},{t:'Card battle',c:0},{t:'Sniper',c:0}]});

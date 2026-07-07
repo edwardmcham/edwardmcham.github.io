@@ -1,1 +1,0 @@
-define({"../Content/Components.htm":1,"../Content/Core Rule The Card Battle.htm":2,"../Content/Dice Variant.htm":6,"../Content/King Rules.htm":3,"../Content/Overview.htm":0,"../Content/Quick Reference.htm":7,"../Content/Sniper Rules.htm":4,"../Content/Win Conditions.htm":5,});
