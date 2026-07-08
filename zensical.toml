@@ -38,7 +38,7 @@ features = [
   "toc.follow",
   "navigation.footer"
 ]
-favicon = "assets/favicon.png"
+favicon = "assets/images/favicon.png"
 custom_dir = "overrides"   # -> overrides/partials/social.html
 
 [project.theme.font]

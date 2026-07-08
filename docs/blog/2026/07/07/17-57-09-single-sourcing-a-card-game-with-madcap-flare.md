@@ -12,20 +12,20 @@ tags:
 
 ## Where the idea came from
 
-Ultimate Chess started at my neighbor's kitchen table. Their two sons, 15 and 12, and I wanted to make chess less predictable. We landed on resolving captures with a card battle instead of a straight piece-value swap: three cards face down, one face up, higher card wins. Add Jokers and Snipers for bonus effects. Drop check and checkmate. The result plays fast and stays tense until the last king falls.
+Ultimate Chess started at my neighbor's kitchen table. Their two sons, 15 and 12, and I wanted to make chess less predictable. We landed on resolving captures with a card battle instead of a straight piece-value swap: three cards face down, one face up, higher card wins. Add Jokers (a. k. a. *Snipers*) for bonus effects. Drop check and checkmate. The result plays fast and stays tense until the last king falls.
+
+![Ultimate Chess board and cards](/assets/images/chess-king_51x55.png "EEK!!!") &nbsp;&nbsp; ![Sniper card](/assets/images/evil_joker_card_238x362.jpg "HA HA HA!!!")
 
 I wrote the rules down so we wouldn't forget them. Then I saw a second use: original content, no employer IP, good size for a first Flare project.
 
 ## Why this project
 
-I'd never used Flare. I had a 30-day trial and a self-imposed deadline, so I needed real content to import, not a placeholder. The rulebook fit: enough sections for a TOC and cross-references, small enough to finish in a few evenings.
+I'd never used [MadCap Flare](https://www.madcapsoftware.com/products/flare/). I had a 30-day trial and a self-imposed deadline, so I needed real content to import, not a placeholder. The rulebook fit: enough sections for a TOC and cross-references, small enough to finish in a few evenings.
 
 The project covered:
 
 - Importing a Word draft as the source
 - Organizing topics and building a table of contents
-- Creating snippets for repeated content (the card battle rules appear three times)
-- Using condition tags to separate a "quick reference" view from the full rulebook
 - Building HTML5 and PDF targets from one source
 - Publishing the HTML5 output to GitHub Pages
 
@@ -37,6 +37,11 @@ The published HTML5 topics have random garbled characters. That's a limitation o
 
 ## What's next
 
-Two things I'd add with more time: a second audience view using conditional content, and MadCap Central for publishing instead of a manual Git push. For now, this got me through Flare's project structure and one real single-sourcing pass, start to finish.
+Two things I'd add with more time:
+
+- A second audience view using conditional content
+- MadCap Central for publishing instead of a manual Git push
+ 
+For now, this got me through Flare's project structure and one real single-sourcing pass, start to finish.
 
 {{ post_nav(page.url) }}

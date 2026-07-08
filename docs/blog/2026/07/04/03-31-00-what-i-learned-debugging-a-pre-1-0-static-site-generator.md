@@ -48,7 +48,7 @@ graph TD
 **`includes/hero.html`** — deliberately plain HTML, no Markdown syntax or Jinja calls inside it:
 ```html
 <div class="hero">
-  <img src="assets/earth-boy-on-moon.webp" alt="Edward McHam illustration" class="hero-image">
+  <img src="assets/images/earth-boy-on-moon.webp" alt="Edward McHam illustration" class="hero-image">
   ...
 </div>
 ```
