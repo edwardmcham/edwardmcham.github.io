@@ -26,8 +26,8 @@ The project covered:
 
 - Importing a Word draft as the source
 - Organizing topics and building a table of contents
-- Building HTML5 and PDF targets from one source
-- Publishing the HTML5 output to GitHub Pages
+- Building [HTML5](https://edwardmcham.github.io/UltimateChess/Default.htm) and [PDF](https://edwardmcham.github.io/UltimateChess/UltimateChess-PDF.pdf) targets from one source
+- Publishing the HTML5 output to [GitHub Pages](https://github.com/edwardmcham/UltimateChess)
 
 One source, two outputs, no retyping. That's the single-sourcing pitch, and building it once made it concrete.
 
