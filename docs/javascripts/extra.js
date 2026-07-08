@@ -33,7 +33,7 @@ function initExternalLinks() {
   document.querySelectorAll(".md-content a").forEach(function(link) {
     var isSocial = link.classList.contains("md-social__link") || link.closest(".social-icons");
     var isPdf = link.href.endsWith(".pdf");
-    var isExternal = link.hostname !== window.location.hostname;
+    var isExternal = link.hostname !== window.location.hostname || link.pathname.startsWith("/UltimateChess/");
 
     if (isExternal || isPdf) {
       link.setAttribute("target", "_blank");
