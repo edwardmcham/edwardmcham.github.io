@@ -1,5 +1,5 @@
 ---
-title: Single-Sourcing a Card Game With MadCap Flare
+title: ULTIMATE CHESS ~ Single-Sourcing a Card Game With MadCap Flare
 date: 2026-07-07 17:57:09
 tags:
   - Blog
