@@ -2,7 +2,7 @@
 title: Filing a Bug Against the Tool I Was Learning
 date: 2026-07-07 17:55:19
 tags:
-  - Blog
+  - blog
   - Zensical
   - open-source
   - single-sourcing

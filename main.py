@@ -13,8 +13,31 @@ use must be registered inside it with the @env.macro decorator.
 import os
 import re
 import glob
-from datetime import datetime
+from datetime import datetime, timedelta
 import yaml
+
+# "New post" badge appended after a post title by recent_posts() and
+# all_posts_grouped() when that post's front matter `date` is within
+# NEW_POST_WINDOW_DAYS. Uses the actual MDI "new-box" glyph inline
+# (fill="currentColor", same pattern as every other icon in this file)
+# rather than the :material-new-box: shortcode — macro output is raw
+# HTML dropped into the page, so it bypasses markdown's emoji-shortcode
+# processing and the shortcode text would render literally instead of
+# as an icon. Styled/colored per theme via the .new-badge class in
+# extra.css. Source: Pictogrammers Material Design Icons, "new-box".
+NEW_POST_BADGE = (
+    '<span class="new-badge">'
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor">'
+    '<path d="M20,4C21.11,4 22,4.89 22,6V18C22,19.11 21.11,20 20,20H4C2.89,20 2,19.11 2,18V6C2,4.89 2.89,4 4,4H20'
+    'M8.5,15V9H7.25V12.5L4.75,9H3.5V15H4.75V11.5L7.3,15H8.5'
+    'M13.5,10.26V9H9.5V15H13.5V13.75H11V12.64H13.5V11.38H11V10.26H13.5'
+    'M20.5,14V9H19.25V13.5H18.13V10H16.88V13.5H15.75V9H14.5V14A1,1 0 0,0 15.5,15H19.5A1,1 0 0,0 20.5,14Z" />'
+    '</svg>'
+    '</span>'
+)
+
+# How recent a post's `date` must be, in days, to count as "new".
+NEW_POST_WINDOW_DAYS = 14
 
 
 def define_env(env):
@@ -114,6 +137,15 @@ def define_env(env):
         posts.sort(key=lambda p: p["date"], reverse=True)
         return posts
 
+    def _is_new_post(post_date):
+        """
+        True if `post_date` (a post's front matter date) is within the
+        last NEW_POST_WINDOW_DAYS days of the current build time.
+        Shared by recent_posts() and all_posts_grouped() so both use
+        the same cutoff.
+        """
+        return datetime.now() - post_date <= timedelta(days=NEW_POST_WINDOW_DAYS)
+
     def _post_url(rel):
         """
         Convert a docs-relative .md path into an absolute site URL,
@@ -142,13 +174,15 @@ def define_env(env):
         items = []
         for p in posts[:count]:
             date_str = p["date"].strftime("%d-%b-%Y | %H:%M:%S").upper()
+            badge = NEW_POST_BADGE if _is_new_post(p["date"]) else ""
 
             items.append(
                 '<li><div class="post-header"><span class="post-icon">{icon}</span>'
-                '<a href="{url}" class="post-title">{title}</a></div>'
+                '<a href="{url}" class="post-title">{title}</a>{badge}</div>'
                 '<span class="post-date">{date}</span>'
                 '<p class="post-excerpt">{excerpt}</p></li>'.format(
-                    icon=icon_svg, url=p["rel"], title=p["title"], date=date_str, excerpt=p["excerpt"]
+                    icon=icon_svg, url=p["rel"], title=p["title"], date=date_str,
+                    excerpt=p["excerpt"], badge=badge
                 )
             )
 
@@ -247,13 +281,14 @@ def define_env(env):
             items = []
             for p in group_posts:
                 date_str = p["date"].strftime("%d-%b-%Y | %H:%M:%S").upper()
+                badge = NEW_POST_BADGE if _is_new_post(p["date"]) else ""
                 items.append(
                     '<li><div class="post-header"><span class="post-icon">{icon}</span>'
-                    '<a href="{url}" class="post-title">{title}</a></div>'
+                    '<a href="{url}" class="post-title">{title}</a>{badge}</div>'
                     '<span class="post-date">{date}</span>'
                     '<p class="post-excerpt">{excerpt}</p></li>'.format(
                         icon=icon_svg, url=_post_url(p["rel"]), title=p["title"],
-                        date=date_str, excerpt=p["excerpt"]
+                        date=date_str, excerpt=p["excerpt"], badge=badge
                     )
                 )
             parts.append(

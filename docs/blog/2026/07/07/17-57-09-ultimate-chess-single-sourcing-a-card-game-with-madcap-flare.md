@@ -2,7 +2,7 @@
 title: ULTIMATE CHESS ~ Single-Sourcing a Card Game With MadCap Flare
 date: 2026-07-07 17:57:09
 tags:
-  - Blog
+  - blog
   - MadCap Flare
   - single-sourcing
   - portfolio
@@ -26,7 +26,7 @@ The project covered:
 
 - Importing a Word draft as the source
 - Organizing topics and building a table of contents
-- Building [HTML5](https://edwardmcham.github.io/UltimateChess/Default.htm) and [PDF](https://edwardmcham.github.io/UltimateChess/UltimateChess-PDF.pdf) targets from one source
+- Building [HTML5](https://edwardmcham.github.io/UltimateChess/help/Content/Ultimate%20Chess%20%E2%80%94%20Players%20Guide.htm) and [PDF](https://edwardmcham.github.io/UltimateChess/help/Content/Resources/PrintPDF/UltimateChessPlayersGuide.pdf) targets from one source
 - Publishing the HTML5 output to [GitHub Pages](https://github.com/edwardmcham/UltimateChess)
 
 One source, two outputs, no retyping. That's the single-sourcing pitch, and building it once made it concrete.

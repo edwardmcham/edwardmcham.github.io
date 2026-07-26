@@ -145,6 +145,41 @@
   background-color: #f2d28c;
 }
 
+/* "New post" badge — inline MDI "new-box" SVG appended after a post
+   title by recent_posts()/all_posts_grouped() in main.py, for posts
+   dated within the last two weeks. fill="currentColor" on the SVG
+   itself means `color` here recolors the icon. */
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color: darkred;
+}
+
+.new-badge svg {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.45em;
+  filter: drop-shadow(1px 1px 1.5px rgba(0, 0, 0, 0.45));
+}
+
+/* Blog page (all_posts_grouped()) renders posts inside .month-group
+   <details> blocks — bump the badge up slightly there vs. the home
+   page's recent_posts() list. */
+.month-group .new-badge svg {
+  width: 1.65em;
+  height: 1.65em;
+  vertical-align: -0.5em;
+}
+
+[data-md-color-scheme="slate"] .new-badge {
+  color: #2ecc71;
+}
+
+[data-md-color-scheme="slate"] .new-badge svg {
+  filter: drop-shadow(0 0 4px #2ecc71);
+}
+
 /* =============================================================================
    3. TYPOGRAPHY
    ============================================================================= */
